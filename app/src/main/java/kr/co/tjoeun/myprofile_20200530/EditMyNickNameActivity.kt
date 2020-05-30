@@ -12,6 +12,10 @@ class EditMyNickNameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_my_nick_name)
 
+        val nickName = intent.getStringExtra("nowNickName")
+
+        nickNameEdt.setText(nickName)
+
         okBtn.setOnClickListener {
 //            바꾸려는 닉네임을 받아서 => 결과로 설정하고 => 종료
 

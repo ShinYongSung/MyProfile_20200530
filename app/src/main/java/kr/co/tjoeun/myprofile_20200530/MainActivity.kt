@@ -16,7 +16,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         changeNickBtn.setOnClickListener {
+
+            var nickName = myNickNameTxt.text.toString()
+
+            if (nickName == "본인 닉네임 표시") {
+//                첨부되는 닉네임을 빈칸 "" 으로 변경
+                nickName = ""
+            }
+
             val myIntent = Intent(this, EditMyNickNameActivity::class.java)
+            myIntent.putExtra("nowNickName", nickName)
             startActivityForResult(myIntent, REQ_FOR_NICKNAME)
         }
 
